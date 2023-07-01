@@ -57,15 +57,14 @@ jobs:
         with:
           skip_external: true
       - name: Deploy to gh-pages
-        if: ${{ github.event_name == 'push' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           force_orphan: true
-      - name: Push to Baidu
-        if: ${{ github.event_name == 'push' && github.repository_owner == 'oi-wiki' }}
-        env:
-          SITE: oi-wiki.org
-          BAIDU_TOKEN: ${{ secrets.BaiduToken }}
-        run: ./scripts/post-deploy/baidu-push.sh
+#       - name: Push to Baidu
+#         if: ${{ github.event_name == 'push' && github.repository_owner == 'oi-wiki' }}
+#         env:
+#           SITE: oi-wiki.org
+#           BAIDU_TOKEN: ${{ secrets.BaiduToken }}
+#         run: ./scripts/post-deploy/baidu-push.sh
