@@ -1,5 +1,7 @@
 [build]
-  command = "source scripts/netlify/build.sh"
+  base = "scripts"
+  
+  command = "cd .. && source scripts/netlify/build.sh"
 
 [build.environment]
   NODE_VERSION = "16"
