@@ -1,6 +1,5 @@
 [build]
-  base = "scripts/" # Trick to disable dependencies installation
-  command = "source netlify/build.sh"
+  command = "source scripts/netlify/build.sh"
 
 [build.environment]
   NODE_VERSION = "16"
